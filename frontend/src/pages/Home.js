@@ -1,4 +1,6 @@
 import { useEffect , useState } from 'react'
+import workoutDetails from '../component/workoutDetails'
+
 const Home = () => {
     const [workouts , setWorkouts] = useState(null)
     useEffect(() => {
@@ -16,7 +18,7 @@ const Home = () => {
         <div className="home">
             <h1>Hello</h1>
             <h2>{workouts && workouts.map((workout)=>(
-                <p key={workout._id}>{workout.title}</p>
+                <workoutDetails key={workout._id} workout = {workout} />
             ))}</h2>
         </div>
     )
